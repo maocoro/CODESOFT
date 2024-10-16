@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página principal de inventario de equipos">
+    <title>CODESOFT</title>
+    <link rel="stylesheet" href="css/principal.css">
+</head>
+<body>
+    <header>
+        <h1>CODESOFT</h1>
+        <div class="header-actions">
+            <button onclick="window.location.href='perfil.html'">Perfil de Usuario</button>
+            <button onclick="window.location.href='login.html'">Cerrar Sesión</button>
+        </div>
+    </header>
+
+    <main>
+        <h2>Inventario de Equipos</h2>
+
+        <!-- Buscador -->
+        <div class="search-container">
+            <label for="search">Buscar:</label>
+            <input type="text" id="search" placeholder="Buscar en la tabla...">
+        </div>
+
+        <!-- Tabla de inventario -->
+        <table id="inventory-table">
+            <thead>
+                <tr>
+                    <th>Serial</th>
+                    <th>Responsable</th>
+                    <th>Empresa</th>
+                    <th>Marca</th>
+                    <th>Modelo</th>
+                    <th>Procesador</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Ejemplo de datos, estos serán reemplazados dinámicamente -->
+                <tr>
+                    <td>ABC123</td>
+                    <td>Juan Pérez</td>
+                    <td>Empresa 1</td>
+                    <td>HP</td>
+                    <td>Pavilion</td>
+                    <td>Intel Core i5</td>
+                </tr>
+                <tr>
+                    <td>XYZ456</td>
+                    <td>Ana Gómez</td>
+                    <td>Empresa 2</td>
+                    <td>Dell</td>
+                    <td>Inspiron</td>
+                    <td>Intel Core i7</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Botones de acciones -->
+        <div class="action-buttons">
+            <button type="button" onclick="window.location.href='agregar_equipo.html'">Agregar Equipo</button>
+            <button onclick="editarEquipo()">Editar Equipo</button>
+            <button onclick="eliminarEquipo()">Eliminar Equipo</button>
+            <button onclick="generarReporte()">Generar Reporte</button>
+        </div>
+    </main>
+    
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

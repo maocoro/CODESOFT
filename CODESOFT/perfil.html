@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Usuario - Proyecto CODESOFT</title>
+    <link rel="stylesheet" href="css/perfil.css">
+</head>
+<body>
+    <!-- Cabecera con título del proyecto -->
+    <header>
+        <h1>CODESOFT</h1>
+        <div class="header-actions">
+            <button onclick="window.location.href='principal.html'">← Regresar</button>
+        </div>
+    </header>
+
+    <!-- Contenido principal del perfil -->
+    <main>
+        <h2>Perfil del Usuario</h2>
+        
+        <!-- Imagen y nombre del usuario -->
+        <div class="user-info">
+            <img src="img/perfil.jpg" alt="Foto de perfil" class="profile-pic">
+            <h3 id="user-name">Cristian Diaz Angarita</h3>
+        </div>
+
+        <!-- Botón para cambiar la contraseña -->
+        <button class="change-password-btn" onclick="window.location.href='cambiar-contraseña.html'">Cambiar Contraseña</button>
+
+        <!-- Información del usuario -->
+        <div class="user-stats">
+            <p><strong>Número de equipos agregados:</strong> <span id="equipos-agregados">0</span></p>
+            <p><strong>Número de registros editados:</strong> <span id="registros-editados">0</span></p>
+            <p><strong>Número de alertas gestionadas:</strong> <span id="alertas-gestionadas">0</span></p>
+            <p><strong>ID del último equipo gestionado:</strong> <span id="ultimo-equipo">N/A</span></p>
+        </div>
+    </main>
+</body>
+</html>

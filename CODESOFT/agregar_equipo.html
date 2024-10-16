@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Equipo - Proyecto CODESOFT</title>
+    <link rel="stylesheet" href="css/agregar-equipo.css">
+</head>
+<body>
+    <!-- Cabecera con título del proyecto -->
+    <header>
+        <h1>CODESOFT</h1>
+        <div class="header-actions">
+            <button onclick="window.location.href='principal.html'">← Regresar</button>
+        </div>
+    </header>
+
+    <!-- Contenido principal de agregar equipo -->
+    <main>
+        <h2>Ingresar equipo: </h2>
+
+        <!-- Formulario para agregar equipo -->
+        <form action="#" method="POST" enctype="multipart/form-data">
+            <label for="equipo-id">ID del equipo:</label>
+            <input type="text" id="equipo-id" name="equipo-id" required>
+
+            <label for="foto-equipo">Foto del equipo (opcional):</label>
+            <input type="file" id="foto-equipo" name="foto-equipo" accept="image/*">
+
+            <label for="serial">Serial:</label>
+            <input type="text" id="serial" name="serial" required>
+
+            <label for="marca">Marca:</label>
+            <input type="text" id="marca" name="marca" required>
+
+            <label for="modelo">Modelo:</label>
+            <input type="text" id="modelo" name="modelo" required>
+
+            <label for="empresa-responsable">Empresa Responsable:</label>
+            <input type="text" id="empresa-responsable" name="empresa-responsable" required>
+
+            <label for="nombre-responsable">Nombre del Responsable:</label>
+            <input type="text" id="nombre-responsable" name="nombre-responsable" required>
+
+            <label for="cedula-responsable">Cédula del Responsable:</label>
+            <input type="text" id="cedula-responsable" name="cedula-responsable" required>
+
+            <label for="numero-responsable">Número del Responsable:</label>
+            <input type="tel" id="numero-responsable" name="numero-responsable" required>
+
+            <label for="fecha-alerta">Agregar Alerta (Fecha):</label>
+            <input type="date" id="fecha-alerta" name="fecha-alerta">
+
+            <!-- Botón para crear el registro -->
+            <button type="submit">Crear Registro</button>
+        </form>
+    </main>
+</body>
+</html>
