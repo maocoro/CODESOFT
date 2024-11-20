@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+
+    <div class="header">
+        <h2 class="mb-3 mt-3">{% block title %}Equipos de Computo{% endblock %}</h2>
+        <div class="d-flex justify-content-between mb-3">
+            <p>¡Bienvenido al panel de administración de equipos!</p>
+            <!-- Botón Añadir equipo con icono -->
+            <a href="{{url_for('code.create')}}" class="btn btn-outline-success">
+                <i class="fas fa-plus-circle"></i> AÑADIR EQUIPO
+            </a>
+        </div>
+    </div>
+
+    <!-- Alineando el formulario de búsqueda a la derecha -->
+    <div class="d-flex justify-content-end mb-3">
+        <form class="d-flex" method="post">
+            <!-- Reducir tamaño del campo de búsqueda con clase w-auto -->
+            <input class="form-control me-2 w-auto" type="search" name="search" placeholder="Buscar"
+                aria-label="Search">
+            <!-- Botón de búsqueda con icono -->
+            <button type="submit" class="btn btn-primary btn-lg">
+                <i class="fas fa-search"></i> Buscar
+            </button>
+        </form>
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th class="fs-5">Serial </th>
+                <th class="fs-5">Responsable </th>
+                <th class="fs-5">Empresa </th>
+                <th class="fs-5">Marca </th>
+                <th colspan="2" class="fs-5">Especificaciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for post in posts | reverse %}
+            <tr>
+                <td>{{post.serial}} </td>
+                <td>{{post.responsable}} </td>
+                <td>{{post.empresa}} </td>
+                <td>{{post.marca}} </td>
+                <td>
+                    <!-- Botón Más información con icono -->
+                    <a href="{{url_for('code.update', id=post.id)}}" class="btn btn-sm btn-warning">
+                        <i class="fas fa-info-circle"></i> Más información
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
+
+{% block message%} alert-success {% endblock %}
+

@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section>
+    <div class="container">
+        <div class="header mb-4 mt-4 d-flex justify-content-between align-items-center">
+            <h1 class="h3 fs-2">{% block title %}Agregar Equipo{% endblock %}</h1>
+
+            <a href="{{url_for('code.post')}}" class="btn btn-success">
+                <i class="fas fa-arrow-left"></i> Regresar
+            </a>
+        </div>
+        <div class="body">
+            <form method="post">
+                <div class="mb-3 fw-bold fs-5">
+                    <label for="serial" class="form-label">Serial del equipo</label>
+                    <input type="text" class="form-control" id="serial" name="serial" required>
+                </div>
+                <div class="mb-3">
+                    <label for="responsable" class="form-label fw-bold fs-5">Responsable del equipo</label>
+                    <input type="text" class="form-control" id="responsable" name="responsable" required>
+                </div>
+                <div class="mb-3">
+                    <label for="empresa" class="form-label fw-bold fs-5">Empresa del responsable</label>
+                    <input type="text" class="form-control" id="empresa" name="empresa" required>
+                </div>
+                <div class="mb-3">
+                    <label for="marca" class="form-label fw-bold fs-5">Marca del equipo</label>
+                    <input type="text" class="form-control" id="marca" name="marca" required>
+                </div>
+                <div class="mb-3">
+                    <label for="modelo" class="form-label fw-bold fs-5">Modelo del equipo</label>
+                    <input type="text" class="form-control" id="modelo" name="modelo">
+                </div>
+                <div class="mb-3">
+                    <label for="procesador" class="form-label fw-bold fs-5">Procesador del equipo</label>
+                    <input type="text" class="form-control" id="procesador" name="procesador">
+                </div>
+                <div class="mb-3">
+                    <label for="ram" class="form-label fw-bold fs-5">RAM del equipo</label>
+                    <input type="text" class="form-control" id="ram" name="ram">
+                </div>
+                <div class="mb-3">
+                    <label for="almacenamiento" class="form-label fw-bold fs-5">Almacenamiento del equipo</label>
+                    <input type="text" class="form-control" id="almacenamiento" name="almacenamiento">
+                </div>
+                <div class="mb-3">
+                    <label for="contentInput" class="form-label fw-bold fs-5">Observaciones</label> <br>
+                    {{ ckeditor.create() }}
+                </div>
+                <div class="mt-4 mb-3 d-flex gap-3">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-save"></i> Guardar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}

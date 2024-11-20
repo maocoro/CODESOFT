@@ -1,0 +1,71 @@
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Amiri, Georgia, "Times New Roman", serif;
+}
+
+.display-4 {
+    font-size: 2.5rem;
+}
+
+@media (min-width: 768px) {
+    .display-4 {
+        font-size: 3rem;
+    }
+}
+
+.flex-auto {
+    flex: 0 0 auto;
+}
+
+.h-250 {
+    height: 250px;
+}
+
+@media (min-width: 768px) {
+    .h-md-250 {
+        height: 250px;
+    }
+}
+
+/*
+   * Blog posts
+   */
+.blog-post {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.blog-post-title {
+    font-size: 2.5rem;
+}
+
+.blog-post-meta {
+    margin-bottom: 1.25rem;
+    color: #727272;
+}
+
+/* Estilo personalizado para los mensajes de error */
+.alert-danger {
+    background-color: #f8d7da;  /* Fondo rojo claro */
+    border-color: #f5c6cb;  /* Borde más oscuro */
+    color: #721c24;  /* Texto color rojo oscuro */
+    font-size: 1.1rem;  /* Tamaño de fuente ligeramente mayor */
+    padding: 15px;  /* Relleno más grande para el mensaje */
+    border-radius: 0.375rem;  /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Sombra suave */
+}
+
+.alert-danger .btn-close {
+    background-color: transparent;  /* Botón de cerrar sin fondo */
+    border: none;  /* Sin borde */
+}
+
+.alert-danger .btn-close:hover {
+    background-color: rgba(0, 0, 0, 0.1);  /* Efecto al pasar el ratón */
+    border-radius: 50%;  /* Botón de cerrar redondeado */
+}

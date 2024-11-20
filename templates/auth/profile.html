@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <!-- Contenedor con Flexbox para centrar el título y alinear el botón a la derecha -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <!-- Título centrado -->
+        <h1 class="h3 fs-2 mx-auto">{% block title %}Perfil de Usuario{% endblock %}</h1>
+
+        <!-- Botón de regresar con ícono alineado a la derecha y color verde -->
+        <a href="{{ url_for('code.post') }}" class="btn btn-success ms-3">
+            <i class="fas fa-arrow-left"></i> Regresar
+        </a>
+    </div>
+
+    <form method="post" class="row mt-5" enctype="multipart/form-data">
+        <div class="col-md-4">
+            <div class="text-center">
+                {% if user.photo is none %}
+                <img src="{{url_for('static', filename = 'img/user-dark.png')}}" width="100"
+                    class="profile-image rounded-circle mb-2" alt="Foto de perfil">
+                {% else %}
+                <img src="{{url_for('static', filename = user.photo)}}" width="100"
+                    class="profile-image rounded-circle mb-2" alt="Foto de perfil">
+                {% endif %}
+                <div class="mb-3">
+                    <input type="file" id="photo" name="photo" class="form-control">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <hr class="mb-4">
+            <div class="mb-3 d-flex">
+                <label for="name" class="form-label fw-bold fs-5 w-25">Nombres(s):</label>
+                <p id="name" class="form-control-plaintext fs-5">{{ user.name }}</p>
+            </div>
+            <div class="mb-3 d-flex">
+                <label for="lastname" class="form-label fw-bold fs-5 w-25">Apellidos:</label>
+                <p id="lastname" class="form-control-plaintext fs-5">{{ user.lastname }}</p>
+            </div>
+            <div class="mb-3 d-flex">
+                <label for="company" class="form-label fw-bold fs-5 w-25">Empresa:</label>
+                <p id="company" class="form-control-plaintext fs-5">{{ user.company }}</p>
+            </div>
+            <div class="mb-3 d-flex">
+                <label for="email" class="form-label fw-bold fs-5 w-25">Correo Electrónico:</label>
+                <p id="email" class="form-control-plaintext fs-5">{{ user.email }}</p>
+            </div>
+            <div class="mb-3 fw-bold fs-5">
+                <label for="username" class="form-label">Nombre de usuario</label>
+                <input type="text" class="form-control" id="username" name="username" value="{{user.username}}"
+                    required>
+            </div>
+            <div class="mb-3 fw-bold fs-5">
+                <label for="password" class="form-label">Cambiar contraseña</label>
+                <input type="password" class="form-control" id="password" name="password">
+            </div>
+            <!-- Botón de guardar cambios con ícono y margen adicional -->
+            <button type="submit" class="btn btn-primary mt-4 mb-5">
+                <i class="fas fa-save"></i> Guardar Cambios
+            </button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section>
+    <div class="container">
+        <div class="header mb-4 mt-4 d-flex justify-content-between align-items-center">
+            <h1 class="h3 fs-2">{% block title %}Información del equipo / Actualizar {% endblock %}</h1>
+            <!-- Botón de regresar con ícono -->
+            <a href="{{url_for('code.post')}}" class="btn btn-success">
+                <i class="fas fa-arrow-left"></i> Regresar
+            </a>
+        </div>
+        <hr>
+        <div class="body">
+            <form method="post">
+                <!-- Serial del equipo -->
+                <div class="mb-3 d-flex">
+                    <label for="serial" class="form-label fw-bold fs-5 w-25">Serial del equipo:</label>
+                    <p id="serial" class="form-control-plaintext fs-5">{{ post.serial }}</p>
+                </div>
+
+                <!-- Marca -->
+                <div class="mb-3 d-flex">
+                    <label for="marca" class="form-label fw-bold fs-5 w-25">Marca del equipo:</label>
+                    <p id="marca" class="form-control-plaintext fs-5">{{ post.marca }}</p>
+                </div>
+
+                <!-- Modelo -->
+                <div class="mb-3 d-flex">
+                    <label for="modelo" class="form-label fw-bold fs-5 w-25">Modelo del equipo:</label>
+                    <p id="modelo" class="form-control-plaintext fs-5">{{ post.modelo }}</p>
+                </div>
+
+                <!-- Procesador -->
+                <div class="mb-3 d-flex">
+                    <label for="procesador" class="form-label fw-bold fs-5 w-25">Procesador del equipo:</label>
+                    <p id="procesador" class="form-control-plaintext fs-5">{{ post.procesador }}</p>
+                </div>
+                <br>
+
+                <div class="header mb-4 mt-4">
+                    <h1 class="h3 fs-2">Datos que puedes Actualizar </h1>
+                </div>
+                <hr>
+
+                <!-- Responsable del equipo -->
+                <div class="mb-3">
+                    <label for="responsable" class="form-label fw-bold fs-5">Responsable del equipo</label>
+                    <input type="text" class="form-control" id="responsable" name="responsable"
+                        value="{{ post.responsable }}" required>
+                </div>
+
+                <!-- Empresa del responsable -->
+                <div class="mb-3">
+                    <label for="empresa" class="form-label fw-bold fs-5">Empresa del responsable</label>
+                    <input type="text" class="form-control" id="empresa" name="empresa" value="{{ post.empresa }} "
+                        required>
+                </div>
+
+                <!-- RAM -->
+                <div class="mb-3">
+                    <label for="ram" class="form-label fw-bold fs-5">RAM del equipo</label>
+                    <input type="text" class="form-control" id="ram" name="ram" value="{{ post.ram }}">
+                </div>
+
+                <!-- Almacenamiento -->
+                <div class="mb-3">
+                    <label for="almacenamiento" class="form-label fw-bold fs-5">Almacenamiento del equipo</label>
+                    <input type="text" class="form-control" id="almacenamiento" name="almacenamiento"
+                        value="{{ post.almacenamiento }}">
+                </div>
+
+                <!-- Observaciones -->
+                <div class="mb-3">
+                    <label for="contentInput" class="form-label fw-bold fs-5">Observaciones</label> <br>
+                    {{ ckeditor.create(value=post.descripcion) }}
+                </div>
+
+                <!-- Botones -->
+                <div class="mt-4 mb-3 d-flex gap-3">
+                    <!-- Botón de actualizar con ícono -->
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-sync-alt"></i> Actualizar
+                    </button>
+                    <!-- Botón de eliminar con ícono -->
+                    <a href="{{ url_for('code.delete', id=post.id) }}" class="btn btn-danger">
+                        <i class="fas fa-trash-alt"></i> Eliminar Equipo
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- Sección de bienvenida -->
+<section class="container" {{value}}>
+    <div class="row">
+        <div class="col-md-6 py-5">
+            <h1 class="display-4 fst-italic">{% block title %}Bienvenido a CODESOFT{% endblock %}</h1>
+            <p>Esta una herramienta de gestión diseñada para optimizar el registro, seguimiento y control de equipos
+                tecnológicos y sus responsables.
+            </p>
+            <p>Permite almacenar información detallada sobre dispositivos, como su identificación, marca, modelo y datos
+                del responsable, además de establecer alertas de mantenimiento o vencimientos importantes.</p>
+            <p>
+                ¡Haz parte de nuestro equipo!
+            </p>
+            <a href="{{url_for('auth.register')}}" class="btn btn-outline-dark w-50 fs-3">
+                <i class="fas fa-user-plus"></i> Registrate
+            </a>
+        </div>
+        <div class="col-md-6 d-flex justify-content-center align-items-center mt-5">
+            <img src="{{url_for('static', filename = 'img/logo.png')}}" alt="Imagen de bienvenida" class="img-fluid">
+        </div>
+    </div>
+</section>
+
+{% endblock %}
